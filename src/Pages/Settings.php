@@ -55,16 +55,16 @@ class Settings extends Page implements HasForms
 
     protected static function getNavigationGroup(): ?string
     {
-        return config('filament-settings.group');
+        return __( config('filament-settings.group'));
     }
 
     protected static function getNavigationLabel(): string
     {
-        return config('filament-settings.label');
+        return __(config('filament-settings.label'));
     }
 
     public function getTitle(): string {
-        return config("filament-settings.title");
+        return __(config("filament-settings.title"));
     }
 
     protected static function shouldRegisterNavigation(): bool

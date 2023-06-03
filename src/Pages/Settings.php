@@ -49,7 +49,10 @@ class Settings extends Page implements HasForms
                 config('filament-settings.path')
             )->put($key, $data);
         }
-
+        if (isset(FilamentSettings::$afterSave)) {
+            $function = FilamentSettings::$afterSave;
+            $function();
+        }
         $this->notify('success', trans('Saved!'));
     }
 
